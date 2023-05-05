@@ -1,0 +1,10 @@
+.container-listing__main__header {
+  display: flex;
+  justify-content: space-between;
+
+  &__avatar {
+    width: 47px;
+    height: 47px;
+    border-radius: 25px;
+  }
+}

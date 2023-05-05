@@ -1,0 +1,62 @@
+<div *ngIf="flow$ | async" class="container-detail">
+  <div class="container-detail__main">
+    <app-header-detail-back-options
+      (toHomeScreenEmit)="toHomeScreen()"
+    ></app-header-detail-back-options>
+
+    <div class="container-detail__main__image__product">
+      <img
+        [src]="baseImgUrl + '/icons' + productSelected.image"
+        alt="imgBeer"
+        width="240"
+        height="240"
+      />
+    </div>
+
+    <div class="container-detail__main__title__price">
+      <span class="container-detail__main__title__price__brand">{{
+        productSelected.brand
+      }}</span>
+      <span class="container-detail__main__title__price__value">{{
+        productSelected.initialValue
+      }}</span>
+    </div>
+
+    <div class="container-detail__main__origin__stock">
+      <span>Origin: {{ productSelected.origin }}</span> |
+      <span>Stock: {{ productSelected.stockPrice.stock }}</span>
+    </div>
+
+    <div class="container-detail__main__description">
+      <p>Description</p>
+      <span class="container-detail__main__description__text">
+        {{
+          readMore
+            ? productSelected.information
+            : productSelected.information.substring(0, 225)
+        }}...
+      </span>
+
+      <span
+        class="container-detail__main__description__read"
+        (click)="toggleReadMore()"
+      >
+        {{ readMore ? "Read less" : "Read more" }}
+      </span>
+    </div>
+    
+    <app-sku-size-card
+      [productSelected]="productSelected"
+      (changeSkuEmit)="changeSku($event.code, $event.index)"
+    ></app-sku-size-card>
+
+    <div class="container-detail__main__footer">
+      <div class="container-detail__main__footer__cart">
+        <img src="../../../assets/images/icons/bag.svg" alt="" />
+      </div>
+      <div class="container-detail__main__footer__add__cart">
+        <span>Add to cart</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.container-listing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__main {
+    width: 375px;
+    padding: 20px;
+    background-color: #fafafa;
+
+    &__greeting {
+      margin-top: 10px;
+      & span {
+        color: #646464;
+        opacity: 0.6;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+
+    &__welcome {
+      margin-top: 10px;
+      & span {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+        color: #323232;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="container-listing">
+  <div class="container-listing__main">
+    <app-header-tab-avatar></app-header-tab-avatar>
+
+    <div class="container-listing__main__greeting">
+      <span>Hi Mr. Michael,</span>
+    </div>
+
+    <div class="container-listing__main__welcome">
+      <span>Welcome Back!</span>
+    </div>
+
+    <app-input-prefix-img></app-input-prefix-img>
+
+    <app-slide-category></app-slide-category>
+
+    <app-grid-category-product
+      [products]="products"
+      (goToDetailEmit)="goToDetail($event)"
+    ></app-grid-category-product>
+  </div>
+</div>

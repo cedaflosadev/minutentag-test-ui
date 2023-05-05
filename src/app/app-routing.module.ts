@@ -1,10 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+import { Routes } from '@angular/router';
+export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () =>
+      import('./pages/listing/listing.component').then(
+        (m) => m.ListingComponent
+      ),
+  },
+  {
+    path: ':id',
+    loadComponent: () =>
+      import('./pages/detail/detail.component').then((m) => m.DetailComponent),
+  },
+];

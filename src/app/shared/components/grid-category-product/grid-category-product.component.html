@@ -1,0 +1,29 @@
+<div class="container-listing__main__populer">
+  <div class="container-listing__main__populer__title">
+    <span class="container-listing__main__populer__title__text">Populer</span>
+    <span class="container-listing__main__populer__title__see">See all</span>
+  </div>
+  <div class="container-listing__main__populer__grid">
+    <div
+      class="container-listing__main__populer__grid__card"
+      *ngFor="let product of products"
+      (click)="goToDetail(product)"
+    >
+      <p>{{ product.brand }}</p>
+      <img
+        [src]="baseImgUrl + '/icons' + product.image"
+        alt="modelo"
+        width="122"
+        height="122"
+      />
+      <div class="container-listing__main__populer__grid__card__footer__item">
+        <span>{{ product.initialValue }}</span>
+        <div
+          class="container-listing__main__populer__grid__card__footer__item__plus"
+        >
+          <span>+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

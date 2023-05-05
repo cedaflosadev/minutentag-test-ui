@@ -1,0 +1,12 @@
+.container-detail__main__header {
+  display: flex;
+  justify-content: space-between;
+  &__back {
+    cursor: pointer;
+  }
+  &__dot {
+    width: 47px;
+    height: 47px;
+    border-radius: 25px;
+  }
+}

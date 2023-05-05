@@ -1,0 +1,16 @@
+<div class="container-detail__main__sku">
+    <p>Size</p>
+    <div class="container-detail__main__sku__card">
+      <div
+        *ngFor="let sku of productSelected.skus; let i = index"
+        class="container-detail__main__sku__card__element"
+        [class.container-detail__main__sku__card__element__active]="
+          sku.selected
+        "
+        tooltip="Tooltip Text"
+        (click)="changeSku(sku.code, i)"
+      >
+        <span>{{ sku.name }}</span>
+      </div>
+    </div>
+  </div>
